@@ -4,4 +4,8 @@ python:
   - "3.3"
   - "3.4"
   - "nightly"
+install:
+  - pip install rucola
+  - pip install markdown
+  - pip install .
 script: nosetests
