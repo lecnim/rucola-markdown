@@ -5,7 +5,7 @@ python:
   - "3.4"
   - "nightly"
 install:
-  - pip install rucola
+  - pip install git+git://github.com/lecnim/rucola.git@master
   - pip install markdown
   - pip install .
 script: nosetests
