@@ -47,8 +47,8 @@ Support for markdown plugins is available:
 .. code-block:: python
 
     app.use(
-        Markdown('*.md', toc=True)               # render given file
-        Markdown('*.md', toc={'baselevel': 3})   # render all md files in directory
+        Markdown('*.md', toc=True)               # render using table of contents extension
+        Markdown('*.md', toc={'baselevel': 3})   # set extension options
     )
 
 
