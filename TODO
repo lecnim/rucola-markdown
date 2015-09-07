@@ -1,1 +1,1 @@
-- Correct README.rst
+- Add render_markdown() function to plugin module

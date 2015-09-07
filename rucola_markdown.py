@@ -43,6 +43,8 @@ EXTS = {
 
 class Markdown:
 
+    # TODO: .md or .markdown
+
     def __init__(self, pattern='**/*.md', **extensions):
         self.pattern = pattern
         self.exts = extensions
