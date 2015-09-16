@@ -1,10 +1,10 @@
 import os
 import unittest
-from rucola import Rucola
-from rucola_markdown import Markdown
+from rucola import Rucola, File
+from rucola_markdown import Markdown, render_markdown
 
 
-class Test(unittest.TestCase):
+class TestMarkdown(unittest.TestCase):
 
     def setUp(self):
 
@@ -38,3 +38,18 @@ class Test(unittest.TestCase):
         self.assertEqual(
             '<p><a class="wikilink" href="/home/test/">test</a></p>',
             self.app.get('wikilinks.html').content)
+
+
+class TestRenderMarkdown(unittest.TestCase):
+
+    def test_string(self):
+
+        x = render_markdown('# hello')
+        self.assertEqual('<h1>hello</h1>', x)
+
+    def test_file(self):
+
+        f = File('text.html', content='# hello')
+        x = render_markdown(f)
+        self.assertEqual('<h1>hello</h1>', x)
+        self.assertEqual('# hello', f.content)
